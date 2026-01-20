@@ -1,0 +1,23 @@
+{
+  "name": "ga",
+  "version": "1.0.0",
+  "description": "Melker GA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melman07/GA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melman07/GA/issues"
+  },
+  "homepage": "https://github.com/melman07/GA#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
