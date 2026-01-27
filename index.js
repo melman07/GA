@@ -15,27 +15,32 @@ const guitars = [
   {
     id: 1,
     brand: "Fender",
-    model: "Stratocaster"
+    model: "Stratocaster",
+    price: 3
   },
   {
     id: 2,
     brand: "Gibson",
-    model: "Les Paul"
+    model: "Les Paul",
+    price: 79
   },
   {
     id: 3,
     brand: "Ibanez",
-    model: "RG550"
+    model: "RG550",
+    price: 100
   },
   {
     id: 4,
     brand: "PRS",
-    model: "Custom 24"
+    model: "Custom 24",
+    price: 1200
   },
   {
     id: 5,
     brand: "Yamaha",
-    model: "Pacifica 112V"
+    model: "Pacifica 112V",
+    price: 99999
   }
 ];
 
