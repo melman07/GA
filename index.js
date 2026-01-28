@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.static("client"));
 
-const guitars = [
+let guitars = [
   {
     id: 1,
     brand: "Fender",
@@ -45,6 +45,13 @@ const guitars = [
 ];
 
 
-app.get("/cars", (req,res)=>{
+app.get("/guitars", (req,res)=>{
     res.json(guitars)
 });
+
+app.delete("/guitars/:id",(req,res)=>{
+
+  guitars = guitars.filter(g=>g.id != req.params.id);
+  res.status(200).json({message:"deleted"});
+
+})

@@ -9,14 +9,14 @@ function App(){
             <Header></Header>
             <h2>React Client</h2>
             <main>
-                <Cars></Cars>
+                <Guitars></Guitars>
             </main>
         </div>
     )
 }
 
 
-function Cars(){
+function Guitars(){
 
 
     const  [guitars, setGuitars] = React.useState([])
@@ -28,11 +28,22 @@ function Cars(){
 
 
     async function getGuitars(){
-        const res = await fetch("/cars");
+        const res = await fetch("/Guitars");
         const data = await res.json();
         setGuitars(data);
 
         
+    }
+
+    async function delGuitar(id) {
+
+        const res = await fetch("Guitars/"+id, {
+            method:"DELETE"
+        });
+        
+        if (res.status == 200){
+            setGuitars(prev=> prev.filter(g=>g.id != id));
+        };
     }
 
     return(
@@ -44,6 +55,7 @@ function Cars(){
                     <h3>{g.brand}</h3>
                     <h3>{g.id}</h3>
                     <p><i>{g.price}</i></p>
+                    <button onClick={ ()=>{delGuitar(g.id)} }>Delete Guitar</button>
             
             
                 </div>))}

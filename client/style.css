@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    
+}
+
 .guitar{
     border: 1px solid black;
     padding: 2%;
