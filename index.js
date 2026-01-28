@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+const {getData,saveData} = require("./functions")
+
 const port = process.env.por || 3000;
 
 app.listen(port, () => {
@@ -11,7 +13,7 @@ app.use(express.json());
 
 app.use(express.static("client"));
 
-let guitars = [
+/* let guitars = [
   {
     id: 1,
     brand: "Fender",
@@ -42,7 +44,7 @@ let guitars = [
     model: "Pacifica 112V",
     price: 99999
   }
-];
+]; */
 
 
 app.get("/guitars", (req,res)=>{
@@ -54,4 +56,4 @@ app.delete("/guitars/:id",(req,res)=>{
   guitars = guitars.filter(g=>g.id != req.params.id);
   res.status(200).json({message:"deleted"});
 
-})
+});
