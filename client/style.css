@@ -1,10 +1,25 @@
 *{
     box-sizing: border-box;
+    font-family: systme-ui;
+    margin: 0;
     
 }
+
+header,main,footer,nav{
+    border: 1px solid black;
+    padding: 4%;
+}
+
 
 .guitar{
     border: 1px solid black;
     padding: 2%;
 }
 
+.content{
+    display: none;
+}
+
+:target{
+    display: block;
+}

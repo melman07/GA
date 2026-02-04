@@ -23,6 +23,9 @@ app.get("/guitars", async (req,res)=>{
 
 app.delete("/guitars/:id",(req,res)=>{
 
+  guitars = getData("db.json")
   guitars = guitars.filter(g=>g.id != req.params.id);
   res.status(200).json({message:"deleted"});
+  
+
 });

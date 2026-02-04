@@ -1,4 +1,4 @@
-ReactDOM.createRoot(document.querySelector("#root")).render(App())
+ReactDOM.createRoot(document.querySelector("#root")).render(App());
 
 
 
@@ -10,10 +10,15 @@ function App(){
             <h2>React Client</h2>
             <main>
                 <Guitars></Guitars>
+                <Home></Home>
             </main>
+
+                <footer>
+                    <Footer></Footer>
+                </footer>
         </div>
-    )
-}
+    );
+};
 
 
 function Guitars(){
@@ -50,19 +55,13 @@ function Guitars(){
 
         <div>
             <h3>guitars</h3>
-            {guitars.map(g=>(
-                <div class = "guitar" key={g.id}>
-                    <h3>{g.brand}</h3>
-                    <h3>{g.id}</h3>
-                    <p><i>{g.price}</i></p>
-                    <button onClick={ ()=>{delGuitar(g.id)} }>Delete Guitar</button>
-            
-            
-                </div>))}
+
+          { guitars.map(g=> <Guitar guitar={g} key={g.id}/>)}
+          
 
         </div>
         
-    )
+    );
 
 };
 
@@ -72,8 +71,27 @@ function Header(){
 
         <header>
             <nav>
-                <a href="./">HOME</a>
+                <a href="#HOME">HOME</a>
             </nav>
         </header>
+    )
+}
+
+function Footer(){
+    return(
+
+        <footer>
+            <a href="">ads</a>
+        </footer>
+    )
+}
+
+
+function Home(){
+
+    return(
+        <main id="home" className="content">
+            <h1>HOME</h1>
+        </main>
     )
 }
