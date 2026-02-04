@@ -3,7 +3,7 @@ const app = express();
 
 const {getData,saveData} = require("./functions")
 
-const port = process.env.por || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log("Server running on http://localhost:" + port)
@@ -13,47 +13,16 @@ app.use(express.json());
 
 app.use(express.static("client"));
 
-/* let guitars = [
-  {
-    id: 1,
-    brand: "Fender",
-    model: "Stratocaster",
-    price: 3
-  },
-  {
-    id: 2,
-    brand: "Gibson",
-    model: "Les Paul",
-    price: 79
-  },
-  {
-    id: 3,
-    brand: "Ibanez",
-    model: "RG550",
-    price: 100
-  },
-  {
-    id: 4,
-    brand: "PRS",
-    model: "Custom 24",
-    price: 1200
-  },
-  {
-    id: 5,
-    brand: "Yamaha",
-    model: "Pacifica 112V",
-    price: 99999
-  }
-]; */
 
+app.get("/guitars", async (req,res)=>{
 
-app.get("/guitars", (req,res)=>{
-    res.json(guitars)
+  guitars = await getData("db.json")
+  res.json(guitars)
 });
+
 
 app.delete("/guitars/:id",(req,res)=>{
 
   guitars = guitars.filter(g=>g.id != req.params.id);
   res.status(200).json({message:"deleted"});
-
 });
